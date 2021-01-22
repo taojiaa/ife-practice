@@ -36,3 +36,19 @@ function uniqArray(arr) {
     }
     return newArr;
 }
+
+function simpleTrim(str) {
+    for (var start = 0; start < str.length; start++) {
+        if (str[start] != ' ') break;
+    }
+    for (var end = str.length - 1; end > 0; end--) {
+        if (str[end] != ' ') break;
+    }
+    return str.substring(start, end + 1);
+}
+
+
+function trim(str) {
+    return str.replace(/(^\s*) | (\s*$)/g, '');
+}
+
