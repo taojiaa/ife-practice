@@ -1,0 +1,596 @@
+/* index.html */
+
+#header {
+  background-color: #522A5C;
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+#header-content {
+  background-color: #522A5C;
+  width: 980px;
+  height: inherit;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#logo {
+  float: left;
+  padding-top: 40px;
+  font-size: 22px;
+  color: white;
+}
+
+#menu-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.menu-item {
+  display: inline;
+  padding-left: 28px;
+}
+
+.menu-item-link {
+  font-family: Simsun;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+#github-logo {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+
+#main-blog-container {
+  background-image: url("../img/index-main-img.jpg");
+  background-repeat: no-repeat;
+  background-size: minmax(980px, 100%);
+  height: 700px;
+  width: 100%;
+  position: relative;
+  overflow: scroll;
+}
+
+#main-blog {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 150px;
+}
+
+#main-blog-title {
+  font-size: 14px;
+  text-align: right;
+  color: white;
+  margin: 1em;
+}
+
+.main-blog-p {
+  font-size: 12px;
+  color: white;
+  margin: 1em;
+  text-indent: 2em;
+}
+
+#other-blogs-container {
+  background-color: gainsboro;
+  width: 100%;
+  height: 600px;
+}
+
+#other-blog-cards {
+  display: grid;
+  padding-top: 10px;
+  grid-template-columns: auto repeat(3, 320px) auto;
+  grid-gap: 10px;
+}
+
+.other-blog-card {
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.other-blog-img {
+  width: 300px;
+  height: 180px;
+}
+
+.other-blog {
+  padding: 15px 30px 30px 25px;
+  text-align: start;
+  line-height: 170%;
+}
+
+.other-blog-p {
+  font-size: 12px;
+  margin: 1em;
+  text-indent: 2em;
+}
+
+#intro {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  ;
+}
+
+#intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#intro-avatar {
+  display: block;
+  margin-top: -50px;
+  width: 120px;
+}
+
+#intro-title {
+  margin-top: 50px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#intro-p {
+  margin-top: 50px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1em;
+  text-indent: 2em;
+}
+
+#other-links {
+  background-color: black;
+  width: 100%;
+  height: 400px;
+}
+
+#footer-menu-box {
+  padding: 10px 0 0 5px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-menu-item {
+  display: inline;
+  padding: 0 10px;
+}
+
+.footer-menu-link {
+  text-decoration: none;
+  color: white;
+}
+
+#footer-split {
+  height: 1px;
+  background-color: grey;
+  border: none;
+}
+
+#footer-links-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.footer-link-title {
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+#footer-copyright {
+  margin-top: 130px;
+  color: white;
+  text-align: center;
+}
+
+#footer-github-logo {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+
+/* blog.html */
+
+#blogs-container {
+  width: 100%;
+  height: 1300px;
+  background-color: gainsboro;
+}
+
+#blogs-content {
+  background-color: gainsboro;
+  display: grid;
+  grid-template-columns: 700px 280px;
+  grid-gap: 10px;
+  width: 980px;
+  height: 1200px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.blog-card {
+  height: 300px;
+  background-color: whitesmoke;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.blog-main-title {
+  display: block;
+  color: purple;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.blog-side-title {
+  display: block;
+  color: #666666;
+  font-size: 12px;
+  padding: 10px 0;
+}
+
+.blog-p {
+  font-size: 12px;
+  margin-bottom: 1em;
+  text-indent: 2em;
+}
+
+.blog-info {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: grey;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#blog-page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-page {
+  display: block;
+  padding: 5px 15px;
+  margin: 0 7px;
+  background-color: whitesmoke;
+  border: none;
+}
+
+.blog-page:focus {
+  outline: none;
+  color: white;
+  background-color: purple;
+}
+
+#blog-search-container {
+  background-color: white;
+  height: 80px;
+  position: relative;
+  padding: 20px;
+}
+
+#blog-search {
+  display: flex;
+  height: 40px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#blog-tags {
+  margin-top: 10px;
+}
+
+.blog-tag {
+  display: block;
+  background-color: whitesmoke;
+  border-top: 1px gainsboro solid;
+  border-bottom: 1px gainsboro solid;
+  border-left: 3px rgba(128, 0, 128, 0.3) solid;
+  border-right: none;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  color: grey;
+}
+
+.blog-tag:hover, .blog-tag:focus {
+  border-left: 3px purple solid;
+  outline: none;
+}
+
+/* gallery.html */
+
+#gallery-container {
+  width: 980px;
+  height: 1200px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+#gallery-tab-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.gallery-tab {
+  font-size: 14px;
+  padding: 15px 10px 10px 10px;
+  color: grey;
+  background-color: white;
+  border-top: 5px rgba(128, 0, 128, 0.3) solid;
+  border-right: 1px gainsboro solid;
+  border-bottom: 1px black solid;
+  margin: 0;
+}
+
+.gallery-tab:hover, .gallery-tab:focus {
+  border-top: 5px rgba(128, 0, 128, 1) solid;
+  border-bottom: 0;
+  outline: none;
+}
+
+#gallery-main-container {
+  background-color: gainsboro;
+  height: 900px;
+  display: grid;
+  grid-template-columns: 700px 280px;
+  grid-gap: 10px;
+}
+
+#gallery-card-container {
+  background-color: white;
+  height: inherit;
+  padding: 20px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.gallery-card {
+  width: 200px;
+  margin: 5px;
+}
+
+.gallery-card-img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-card-text {
+  background-color: rgb(145, 36, 36);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.gallery-card-text-container {
+  padding: 5px 5px 5px 0;
+}
+
+.gallery-card-text-title {
+  font-size: 14px;
+  color: white;
+  display: block;
+}
+
+.gallery-card-text-content {
+  font-size: 12px;
+  color: white;
+  display: block;
+}
+
+.gallery-card-text-label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid white;
+  color: white;
+  margin: 10px auto;
+}
+
+#gallery-side-container {
+  background-color: gainsboro;
+}
+
+#gallery-board {
+  margin-top: 10px;
+  background-color: white;
+  padding: 20px 0;
+}
+
+#gallery-board-title {
+  display: block;
+  color: grey;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+#gallery-board-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gallery-board-list-item {
+  margin: 10px;
+}
+
+.gallery-board-label {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  border: 1px purple solid;
+  background-color: purple;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+}
+
+.gallery-board-bar {
+  display: inline;
+  font-size: 0;
+}
+
+.gallery-board-bar-1, .gallery-board-bar-2 {
+  border: 1px purple solid;
+  font-size: 14px;
+  letter-spacing: 16px;
+}
+
+.gallery-board-bar-1 {
+  color: purple;
+  background-color: purple;
+}
+
+.gallery-board-bar-2 {
+  color: white;
+  background-color: white;
+}
+
+.gallery-board-text {
+  margin-left: 20px;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+}
+
+/* about.html */
+
+#about-container {
+  width: 100%;
+  height: 1200px;
+  background-color: gainsboro;
+  padding-top: 100px;
+}
+
+#about-content-container {
+  background-color: white;
+  width: 980px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+}
+
+#about-avatar-container {
+  grid-column: 1 / 3;
+  position: relative;
+}
+
+.about-avatar {
+  display: block;
+  height: 150px;
+  width: 150px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 6px solid gainsboro;
+  object-fit: cover;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  translate: -50%;
+  z-index: 1;
+}
+
+
+.about-title, #about-title-first {
+  font-size: 20px;
+  text-align: right;
+  padding: 20px 50px 20px 20px;
+  border-right: 3px gainsboro solid;
+}
+
+.about-text, #about-text-first {
+  font-size: 17px;
+  text-align: left;
+  padding: 20px 50px 20px 20px;
+  border-left: 3px gainsboro solid;
+  position: relative;
+}
+
+#about-title-first, #about-text-first {
+  padding: 100px 50px 20px 20px;
+}
+
+.about-pic-container {
+  grid-column: 1 / 3;
+  height: 100px;
+}
+
+.about-pic {
+  display: block;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 6px solid gainsboro;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.about-p {
+  display: block;
+}
+
+.about-exp-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+.about-exp-text {
+  margin-left: 30px;
+}
+
+.about-exp-text-aux {
+  font-size: 12px;
+}
+
+.about-year {
+  display: inline-block;
+  width: 50px;
+  padding: 3px 0;
+  border-radius: 25%;
+  border: 6px solid gainsboro;
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  left: -36px;
+}
