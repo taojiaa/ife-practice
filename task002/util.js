@@ -52,3 +52,27 @@ function trim(str) {
     return str.replace(/(^\s*) | (\s*$)/g, '');
 }
 
+
+function each(arr, fn) {
+    for (let [index, item] of Object.entries(arr)) {
+        fn(item, index);
+    }
+}
+
+function getObjectLength(obj) {
+    let count = 0;
+    for (let key in obj) {
+        count += 1;
+    }
+    return count;
+}
+
+function isEmail(emailStr) {
+    var pattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    return pattern.test(emailStr);
+}
+
+function isMobilePhone(phone) {
+    let pattern = /^1[3456789]d{9}$/;
+    return pattern.test(phone);
+}
