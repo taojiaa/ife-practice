@@ -167,3 +167,72 @@ function $(selector) {
     }
 }
 
+function addEvent(element, event, listener) {
+    if (element.addEventListener) {
+        element.addEventListener(event, listener);
+    } else if (element.attachEvent) {
+        element.attachEvent(event, listener);
+    } else {
+        element["on" + event] = listener;
+    }
+}
+
+
+function removeEvent(element, event, listener) {
+    if (element.removeEventListener) {
+        element.removeEventListener(event, listener);
+    } else if (element.detachEvent) {
+        element.detachEvent(event, listener);
+    } else {
+        element["on" + event] = null;
+    }
+}
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    addEvent(element, "click", listener);
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    addEvent(element, "keydown", function (ev) {
+        let ev = ev || window.event;
+        if (ev.keyCode == 13) {
+            listener();
+        }
+    })
+}
+$.on = addEvent;
+$.un = removeEvent;
+$.click = addClickEvent;
+$.enter = addEnterEvent;
+
+
+function delegateEvent(element, tag, eventName, listener) {
+    return addEvent(element, eventName, function (ev) {
+        let ev = ev || window.event;
+        let target = ev.target || ev.srcElement;
+        if (target.localeLowerCase() == tag) {
+            listener.call(target, eventName);
+        }
+    });
+}
+
+$.delegate = delegateEvent;
+
+
+$.on = function (selector, event, listener) {
+    return addEvent($(selector), event, listener);
+};
+
+$.click = function (selector, listener) {
+    return addClickEvent($(selector), listener);
+};
+
+$.un = function (selector, event, listener) {
+    return removeEvent($(selector), event, listener);
+};
+
+$.delegate = function (selector, tag, eventName, listener) {
+    return delegateEvent($(selector), tag, eventName, listener);
+};
