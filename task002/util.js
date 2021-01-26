@@ -236,3 +236,50 @@ $.un = function (selector, event, listener) {
 $.delegate = function (selector, tag, eventName, listener) {
     return delegateEvent($(selector), tag, eventName, listener);
 };
+
+
+function isIE() {
+    let userAgent = navigator.userAgent;
+
+    let isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+    let isEdge = userAgent.indexOf("Edge") > -1 && !isIE;
+    let isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+
+    if (isIE) {
+        let reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion < 7) {
+            return 6;
+        }
+        else {
+            return fIEVersion;
+        }
+    } else if (isEdge) {
+        return 'edge';
+    } else if (isIE11) {
+        return 11;
+    } else {
+        return -1;
+    }
+}
+
+function setCookie(cookieName, cookieValue, expireDays) {
+    let date = new Date();
+    date.setTime(date.getTime() + (expireDays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+}
+
+
+function getCookie(cookieName) {
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookieList = decodedCookie.split(';');
+    for (let cookie of cookieList) {
+        cookie = cookie.trim();
+        if (cookie.indexOf(cookieName) == 0) {
+            return cookie.substring(cookieName.length + 1);
+        }
+    }
+    return "";
+}
