@@ -318,4 +318,5 @@ function ajax(url, options) {
             }
         }
     }
+    return xhrObj;
 }
