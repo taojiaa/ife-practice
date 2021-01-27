@@ -283,3 +283,39 @@ function getCookie(cookieName) {
     }
     return "";
 }
+
+function ajax(url, options) {
+    let xhrObj = new XMLHttpRequest();
+
+    // construct parameters
+    let data = options.data;
+    let param = '';
+    for (let [key, value] in Object.entries(data)) {
+        param += `${encodeURIComponent(key)}=${encodeURIComponent(value)}&`;
+    }
+    param.replace(/&$/, "");
+
+    // send
+    let type = options.type;
+    if (type === 'get') {
+        xhrObj.open('get', `${url}?${param}`);
+        xhrObj.send();
+    } else if (type === 'post') {
+        xhrObj.open('post', `${url}?${param}`);
+        xhrObj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhrObj.send();
+    }
+
+    // onload
+    xhrObj.onreadystatechange = function () {
+        if (xhrObj.readyState == 4) {
+            if (xhrObj.status >= 200 && xhrObj.status < 300) {
+                options.onsuccess(xhrObj.responseText, xhrObj);
+            } else {
+                if (options.onfail) {
+                    options.onfail(xhrObj);
+                }
+            }
+        }
+    }
+}
