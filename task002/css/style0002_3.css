@@ -1,0 +1,59 @@
+html {
+    font-size: 10px;
+}
+
+#carousel {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#pic {
+    width: 6000px;
+    height: 500px;
+    position: absolute;
+}
+
+#pic img {
+    float: left;
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.arrow {
+    color: white;
+    font-size: 5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    cursor: pointer;
+}
+
+#arrow-left{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+#arrow-right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.button{
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 3px;
+}
+
+#button-container {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}

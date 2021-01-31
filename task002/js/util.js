@@ -185,7 +185,7 @@ define([], function () {
     function delegateEvent(element, tag, eventName, listener) {
         return addEvent(element, eventName, function (ev) {
             let target = ev.target || ev.srcElement;
-            if (target.localeLowerCase() == tag) {
+            if (target.tagName.toLocaleLowerCase() == tag) {
                 listener.call(target, eventName);
             }
         });
