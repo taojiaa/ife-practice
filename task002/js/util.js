@@ -147,6 +147,7 @@ define([], function () {
     }
 
     function addEvent(element, event, listener) {
+        if (!element) return;
         if (element.addEventListener) {
             element.addEventListener(event, listener);
         } else if (element.attachEvent) {
