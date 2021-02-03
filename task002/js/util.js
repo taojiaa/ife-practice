@@ -110,11 +110,11 @@ define([], function () {
                 elements.push(root.getElementById(selector.substring(1)));
                 break;
             case '.':
-                elements.push(root.getElementByClassName(selector.substring(1)));
+                elements = root.getElementsByClassName(selector.substring(1));
                 break;
             case '[':
                 if (selector.indexOf('=') == -1) {
-                    let allChildNodes = root.getElementByTagName('*');
+                    let allChildNodes = root.getElementsByTagName('*');
                     for (let value of allChildNodes) {
                         if (value.getAttribute(selector.substring(1, -1)) != null) {
                             elements.push(value);
@@ -122,7 +122,7 @@ define([], function () {
                     }
                 } else {
                     let index = selector.indexOf('=');
-                    let allChildNodes = root.getElementByTagName('*');
+                    let allChildNodes = root.getElementsByTagName('*');
                     for (let value of allChildNodes) {
                         if (value.getAttribute(selector.substring(1, index)) == selector.substring(index + 1, -1)) {
                             elements.push(value);

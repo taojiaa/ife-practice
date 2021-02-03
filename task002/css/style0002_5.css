@@ -1,0 +1,38 @@
+:root{
+    --item-width: 150px;
+    --item-height: 50px;
+    --bar-height: 500px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 800px;
+    height: 600px;
+    background-color: gainsboro;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bar {
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: white;
+    width: var(--item-width);
+    height: var(--bar-height);
+    position: relative;
+}
+
+.item {
+    background-color: rgb(231, 75, 28);
+    width: var(--item-width);
+    height: var(--item-height);
+    border: 1px solid black;
+    margin: -1px;
+    position: absolute;
+    z-index: 1;
+}
