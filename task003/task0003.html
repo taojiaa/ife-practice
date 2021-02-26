@@ -1,0 +1,38 @@
+<html>
+<title>task0003</title>
+
+<head>
+    <link rel="stylesheet" href="css/style0003.css">
+    <script data-main="./main0003" src="./js/require.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <span id="title">GTD Tools</span>
+    </div>
+    <div id="main">
+        <div id="left">
+            <div class="category-title" id="category-all">All Tasks</div>
+            <div class="category-title">List</div>
+            <ul id="category-list"></ul>
+        </div>
+        <div id="mid">
+            <div id='tags'>
+                <input type="radio" id="tagsChoice1" name="tags" value="all" class="tag-options" hidden>
+                <label for="tagsChoice1" class="tag-labels" id="tags-all">All</label>
+
+                <input type="radio" id="tagsChoice2" name="tags" value="unfinished" class="tag-options" hidden>
+                <label for="tagsChoice2" class="tag-labels" id="tags-unfinished">Unfinished</label>
+
+                <input type="radio" id="tagsChoice3" name="tags" value="finished" class="tag-options" hidden>
+                <label for="tagsChoice3" class="tag-labels" id="tags-finished">Finished</label>
+            </div>
+            <ul id="task-list"></ul>
+        </div>
+        <div id="right"></div>
+        <button id="add-category">Add a new category</button>
+        <button id="add-task" disabled>Add a new task</button>
+    </div>
+</body>
+
+</html>
