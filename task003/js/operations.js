@@ -13,19 +13,21 @@ define(['elements', 'utils'], function (elements, utils) {
         let addCategoryButton = document.getElementById('add-category');
         let addTaskButton = document.getElementById('add-task');
 
-        let getTaskInDates = function (subTasks) {
-            taskInDates = {}
-            for (let task of Object.values(subTasks)) {
-                if (task.date in taskInDates) {
-                    taskInDates[task.date].push(task);
-                } else {
-                    taskInDates[task.date] = [task];
+        let renderTaskList = function (subTasks) {
+            let getTaskInDates = function (subTasks) {
+                taskInDates = {}
+                for (let task of Object.values(subTasks)) {
+                    if (task.date in taskInDates) {
+                        taskInDates[task.date].push(task);
+                    } else {
+                        taskInDates[task.date] = [task];
+                    }
                 }
+                return taskInDates;
             }
-            return taskInDates;
-        }
 
-        let renderTaskList = function (taskInDates) {
+            taskInDates = getTaskInDates(subTasks);
+
             taskDom.innerHTML = "";
             if (Object.keys(taskInDates).length !== 0) {
                 let fragment = document.createDocumentFragment();
@@ -161,7 +163,7 @@ define(['elements', 'utils'], function (elements, utils) {
                 addTaskButton.disabled = false;
 
                 // render all tasks belongs to this category.
-                renderTaskList(getTaskInDates(item.subTasks));
+                renderTaskList(item.subTasks);
 
                 event.stopPropagation();
             })
@@ -244,7 +246,7 @@ define(['elements', 'utils'], function (elements, utils) {
             let name = prompt("The name of your new task?");
             let parent = manager[currentLeftFocusId];
             let newTask = taskCategoryMethods.addTask(parent, name);
-            renderTaskList(getTaskInDates(parent.subTasks));
+            renderTaskList(parent.subTasks);
             refreshUnfinishedCount(currentLeftFocusId);
         })
 
@@ -270,7 +272,7 @@ define(['elements', 'utils'], function (elements, utils) {
                     default:
                         subTasks = parent.subTasks;
                 }
-                renderTaskList(getTaskInDates(subTasks));
+                renderTaskList(subTasks);
             })
         });
 
